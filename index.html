@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STREAK COUNTER</title>
+    <link rel="stylesheet" href="indexstyle.css">
+</head>
+
+<body>
+    <div class="container">
+        <div id="welcome" class="welcome">
+            <div>
+                <p id="addBtn">
+                    <ion-icon name="add-circle-outline"></ion-icon>
+                </p>
+            </div>
+
+            <div id="watch">
+                <img src="./images/watch.png" alt="" />
+            </div>
+            <div id="welcometext">
+                <h1>Welcome to My Streak Counter</h1>
+            </div>
+        </div>
+
+
+        <!-- <div id="modal" class="divThree"></div> -->
+
+        <div class="tasks" id="tasks" style="display:none">
+            <div>
+                <p id="closeBtn">
+                    <ion-icon name="close-circle-outline"></ion-icon>
+                </p>
+            </div>
+
+            <div>
+                <ion-icon class="listOutline" name="list-outline"></ion-icon>
+                <p>Add A Todo Here</p>
+            </div>
+
+            <div class="inputs" id="inputs">
+                <!-- <h2 class="h2"></h2> -->
+                <div class="addTaskText">
+                    <h2>Please Add A Task</h2>
+                </div>
+
+
+                <h3 for="tname">Task Name</h3>
+                <input class="name" type="text" name="tname" />
+                <h3 for="image">Image</h3>
+                <input class="image" type="text" name="image" />
+                <h3 for="tname">Start Date</h3>
+                <input class="date" type="date" name="tname" />
+                <button class="addTaskBtn" type="button">Add Task</button>
+            </div>
+        </div>
+
+        <!--  -->
+        <div class="activitiesDiv" id="activitiesDiv">
+            <h2>Activities</h2>
+            <div class="cards" id="cards">
+                <img
+                    src="https://images.unsplash.com/photo-1661956601030-fdfb9c7e9e2f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60">
+                <p>Start Date</p>
+                <p>Name</p>
+            </div>
+            <div class="cards" id="cards">
+                <img
+                    src="https://images.unsplash.com/photo-1661956601030-fdfb9c7e9e2f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60">
+                <p>Start Date</p>
+                <p>Name</p>
+
+            </div>
+            <div class="cards" id="cards">
+                <img
+                    src="https://images.unsplash.com/photo-1661956601030-fdfb9c7e9e2f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60">
+                <p>Start Date</p>
+                <p>Name</p>
+
+            </div>
+            <div class="cards" id="cards">
+                <img
+                    src="https://images.unsplash.com/photo-1661956601030-fdfb9c7e9e2f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60">
+                <p>Start Date</p>
+                <p>Name</p>
+
+            </div>
+
+        </div>
+
+    </div>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script type="module" src="./dist/main.js"></script>
+
+</body>
+
+</html>

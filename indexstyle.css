@@ -1,0 +1,173 @@
+* {
+    padding: 0;
+    margin: 0;
+    /* box-sizing: border-box; */
+}
+
+body {
+    background-color: #ff7f50;
+}
+
+.welcome {
+    height: 65vh;
+    display: flex;
+    color: #fff;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 60px;
+    padding: 50px;
+}
+
+.welcome h1 {
+    font-size: 34px;
+}
+
+ion-icon {
+    font-size: 74px;
+}
+
+.welcome img {
+    height: 65vh;
+}
+
+.tasks {
+    height: 65vh;
+    display: flex;
+    color: #fff;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 60px;
+    padding: 50px;
+}
+
+.tasks h2 {
+    font-size: 28px;
+    padding-bottom: 10px;
+}
+
+.tasks form {
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+}
+
+.inputs {
+
+    height: 400px;
+    width: 450px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h3 {
+    color: #ff7f50;
+    text-align: left;
+    width: 95%;
+    margin-left: 20px;
+    margin-top: 10px;
+
+}
+
+.addTaskBtn {
+    background-color: #ff7f50;
+    color: white;
+    border-color: black;
+    width: 95%;
+}
+
+.addTaskText {
+    background-color: #ff7f50;
+    color: white;
+    width: 95%;
+
+}
+
+.cards {
+    border-color: 2px red;
+    width: 200px;
+    height: 300px;
+}
+
+.cards img {
+    width: 100%;
+}
+
+input {
+    border-color: 2px gray;
+    width: 400px;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+button {
+
+    width: 300px;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.tasks .listOutline {
+    width: 100px;
+    height: 100px;
+}
+
+.cards {
+    color: #000;
+    gap: 60px;
+    /* padding: 50px; */
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.activitiesDiv {
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    color: #000;
+}
+
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    /* align-items: center;
+    justify-content: center;*/
+}
+
+.buttons button {
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.redBtn {
+    background-color: red;
+    color: #fff;
+}
+
+.greyBtn {
+    background-color: #ccc;
+    color: #fff;
+}
+
+#modal {
+    position: absolute;
+    z-index: 1;
+    top: 150px;
+    left: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
