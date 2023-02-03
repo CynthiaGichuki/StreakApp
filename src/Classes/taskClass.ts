@@ -4,12 +4,12 @@ class taskClass implements taskInterface {
     taskname: String;
     taskimage: String;
     taskdate: Date;
-
-
+    // id = this.generateID()
     constructor(taskname: String, taskimage: String, taskdate: Date) {
         this.taskname = taskname
         this.taskimage = taskimage
         this.taskdate = taskdate
+        
     }
 
     generateID() {

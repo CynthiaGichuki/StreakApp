@@ -11,6 +11,10 @@ const taskBtn = document.querySelector('.addTaskBtn');
 const inputs = document.getElementById('inputs');
 const cards = document.querySelector('.cards');
 const activities = document.querySelector('#activitiesDiv');
+const activitiesText = document.querySelector('#activitiesText');
+const modal = document.querySelector('#modal');
+const modalcontent = document.querySelector('.modal-content');
+modal.style.display = "none";
 const nameIn = nameInput.value;
 const imageIn = imageInput.value;
 const dateIn = dateInput.value;
@@ -55,19 +59,46 @@ function checkValidation() {
     }
 }
 function displayTask() {
+    // console.log("asad");
     activities.innerHTML = '';
+    activitiesText.innerHTML = `<p>Activities</p>`;
     streakObject.StreakArray.map(task => {
-        let divActivitiesDisplay = `
-        <div class="cards" id="cards">
+        let divActivitiesDisplay = `<div class="cards" id="cards">
         <img
-            src="https://images.unsplash.com/photo-1661956601030-fdfb9c7e9e2f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60">
-        <p>Start Date</p>
-        <p>Name</p>
+            src="${task.taskimage}">
+        <p>${task.taskdate}</p>
+        <p>${task.taskname}</p>
     </div>`;
         activities.innerHTML += divActivitiesDisplay;
     });
+    nameInput.value = '';
+    imageInput.value = '';
+    dateInput.value = '';
+    const cards = document.getElementById('cards');
+    cards.addEventListener("click", (e) => {
+        e.preventDefault();
+        modal.style.display = "block";
+        displayModal();
+    });
 }
-function checkActivity() {
-    // if(){
-    // }
+function displayModal() {
+    modal.innerHTML = '';
+    streakObject.StreakArray.map(task => {
+        let getModalActivity = `<div class="modals" id="cards">
+        <img
+            src="${task.taskimage}">
+        <p>${task.taskdate}</p>
+        <p>${task.taskname}</p>
+        <button>CLOSE</button>
+        <button>DELETE</button>
+    </div>`;
+        modal.innerHTML += getModalActivity;
+    });
 }
+closeBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    tasks.style.display = "none";
+    welcome.style.display = "flex";
+});
+// function checkActivity() {
+// }

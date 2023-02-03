@@ -12,13 +12,18 @@ const taskBtn = document.querySelector('.addTaskBtn') as HTMLButtonElement;
 const inputs = document.getElementById('inputs')! as HTMLDivElement;
 const cards = document.querySelector('.cards') as HTMLDivElement;
 const activities = document.querySelector('#activitiesDiv') as HTMLDivElement;
+const activitiesText = document.querySelector('#activitiesText') as HTMLDivElement;
+const modal = document.querySelector('#modal') as HTMLDivElement;
+const modalcontent = document.querySelector('.modal-content') as HTMLDivElement;
+
+
+modal.style.display = "none";
+
+
 
 const nameIn = nameInput.value
 const imageIn = imageInput.value
 const dateIn = dateInput.value
-
-
-
 
 
 let streakObject = new streakClass()
@@ -42,19 +47,12 @@ taskBtn.addEventListener("click", (e) => {
     e.preventDefault();
     checkValidation();
 
-
-
-
-
-
 });
 
 
 function checkValidation() {
 
     // console.log("HELLO");
-
-
     const nameIn = nameInput.value
     const imageIn = imageInput.value
     const dateIn = dateInput.value
@@ -74,47 +72,82 @@ function checkValidation() {
 
     }
     else {
+
         let taskObject = new taskClass(nameIn, imageIn, new Date(dateIn));
         streakObject.StreakArray.push(taskObject)
         displayTask()
-
-
 
     }
 
 }
 
 
-
-
 function displayTask() {
-    activities.innerHTML = ''
 
+    // console.log("asad");
+    activities.innerHTML = '';
 
+    activitiesText.innerHTML = `<p>Activities</p>`
     streakObject.StreakArray.map(task => {
-        let divActivitiesDisplay = `
-        <div class="cards" id="cards">
+        let divActivitiesDisplay =
+
+            `<div class="cards" id="cards">
         <img
-            src="https://images.unsplash.com/photo-1661956601030-fdfb9c7e9e2f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60">
-        <p>Start Date</p>
-        <p>Name</p>
+            src="${task.taskimage}">
+        <p>${task.taskdate}</p>
+        <p>${task.taskname}</p>
     </div>`
         activities.innerHTML += divActivitiesDisplay;
 
     })
+
+    nameInput.value = '';
+    imageInput.value = '';
+    dateInput.value = '';
+
+    const cards = document.getElementById('cards') as HTMLDivElement
+
+    cards.addEventListener("click", (e) => {
+        e.preventDefault();
+        modal.style.display = "block";
+        displayModal();
+
+
+    });
+
 }
 
+function displayModal() {
+    modal.innerHTML = '';
+    streakObject.StreakArray.map(task => {
+        let getModalActivity =
 
+            `<div class="modals" id="cards">
+        <img
+            src="${task.taskimage}">
+        <p>${task.taskdate}</p>
+        <p>${task.taskname}</p>
+        <button>CLOSE</button>
+        <button>DELETE</button>
+    </div>`
+        modal.innerHTML += getModalActivity;
+    })
 
-
-
-
-function checkActivity() {
-
-    // if(){
-
-    // }
 }
+
+closeBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    tasks.style.display = "none";
+    welcome.style.display = "flex";
+});
+
+
+
+
+// function checkActivity() {
+
+
+// }
 
 
 
