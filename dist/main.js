@@ -89,10 +89,15 @@ function displayModal() {
             src="${task.taskimage}">
         <p>${task.taskdate}</p>
         <p>${task.taskname}</p>
-        <button>CLOSE</button>
+        <button id ="btnClose">CLOSE</button>
         <button>DELETE</button>
     </div>`;
         modal.innerHTML += getModalActivity;
+    });
+    const btnClose = document.getElementById('btnClose');
+    btnClose.addEventListener("click", (e) => {
+        e.preventDefault();
+        modal.style.display = "none";
     });
 }
 closeBtn.addEventListener("click", (e) => {
